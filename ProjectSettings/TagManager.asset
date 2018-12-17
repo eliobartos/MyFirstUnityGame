@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Lvl1
+  - Lvl2
+  - Lvl3
+  - Controls
+  - Quit
   layers:
   - Default
   - TransparentFX
