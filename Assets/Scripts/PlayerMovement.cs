@@ -3,15 +3,19 @@
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
+    public GameManager gameManager;
 
     public float forwardForce = 45f;
     public float sideForce = 100f;
 
     public bool VelXToZero = true;
 
+    // Player commands
     private bool goRight = false;
     private bool goLeft = false;
     private bool speedUp = false;
+
+
     // Update is called once per frame
     private void Update()
     {
@@ -39,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
         {
             speedUp = false;
         }
+        
+
 
     }
 
@@ -52,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 v = rb.velocity;
         v.x = v.x/1.2f;
 
+        // Act on player input
         if (goRight)
         {
             rb.AddForce(sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
@@ -66,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(0, 0, forwardForce * Time.deltaTime, ForceMode.VelocityChange);
         }
+
+
         // When we are not holding any keys don't move left or rigth
         if (!goRight && !goLeft && VelXToZero)
         {
@@ -77,5 +86,6 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
         }
 
+   
     }
 } 

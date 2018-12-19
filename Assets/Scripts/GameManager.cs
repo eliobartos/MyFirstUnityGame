@@ -5,13 +5,16 @@ public class GameManager : MonoBehaviour
     public bool gameHasEnded = false;
     public float restartDelay = 2.7f;
 
+    public GameObject endGameUI;
+
+    // Poziva se kad igrac neuspjesno zavrsi level
     public void EndGame()
     {
         if(!gameHasEnded)
         {
-            Debug.Log("End Game!");
             gameHasEnded = true;
-            Invoke("RestartGame", restartDelay);
+            //Invoke("RestartGame", restartDelay);
+            endGameUI.SetActive(true);
         }
         
     }
@@ -21,8 +24,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    // Poziva se kad igrac uspjesno zavrsi level
     public void CompleteLevel()
     {
         EndGame();
     }
+
+    public void goToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+  
 }
