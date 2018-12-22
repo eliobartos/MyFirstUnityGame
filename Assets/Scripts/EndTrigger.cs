@@ -7,6 +7,7 @@ public class EndTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        FindObjectOfType<AudioManager>().Play("Cheer");
         gameManager.CompleteLevel();
     }
 }

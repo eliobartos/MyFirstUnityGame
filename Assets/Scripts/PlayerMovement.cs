@@ -81,10 +81,13 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = v;
         }
 
+        // If we are falling down end game
         if (rb.position.y <= -1)
         {
             FindObjectOfType<GameManager>().EndGame();
         }
+
+        
 
    
     }

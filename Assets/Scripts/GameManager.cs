@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     // Poziva se kad igrac uspjesno zavrsi level
     public void CompleteLevel()
     {
+        FindObjectOfType<AudioManager>().Play("Cheer");
         EndGame();
     }
 

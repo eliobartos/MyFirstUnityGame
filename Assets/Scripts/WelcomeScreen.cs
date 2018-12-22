@@ -5,6 +5,7 @@ public class WelcomeScreen : MonoBehaviour
 {
     public void ClickOnButton()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClicked");
         SceneManager.LoadScene("MainMenu");
     }    
 }
