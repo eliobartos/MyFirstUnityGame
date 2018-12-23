@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 45f;
     public float sideForce = 100f;
     public float jumpForce = 1000f;
+    public float gravityForce = -9.81f;
 
     public bool VelXToZero = true;
 
@@ -20,7 +22,23 @@ public class PlayerMovement : MonoBehaviour
 
 
     public bool canJump = false;
+    public bool jumpAllowed = false;
 
+    public void Awake()
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Level01":       
+                break;
+            case "Level02":         
+                break;
+            case "Level03":
+                jumpAllowed = true;
+                gravityForce = -50;
+                break;
+        }
+        Physics.gravity = new Vector3(0, gravityForce, 0);
+    }
 
     // Update is called once per frame
     private void Update()
@@ -89,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(0, 0, forwardForce * Time.deltaTime, ForceMode.VelocityChange);
         }
 
-        if (jump)
+        if (jump && jumpAllowed)
         {
             if (canJump)
             {
