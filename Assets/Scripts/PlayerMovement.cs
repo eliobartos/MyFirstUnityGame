@@ -3,10 +3,12 @@
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
+
     public GameManager gameManager;
 
     public float forwardForce = 45f;
     public float sideForce = 100f;
+    public float jumpForce = 1000f;
 
     public bool VelXToZero = true;
 
@@ -14,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     private bool goRight = false;
     private bool goLeft = false;
     private bool speedUp = false;
+    private bool jump = false;
+
+
+    public bool canJump = false;
 
 
     // Update is called once per frame
@@ -42,6 +48,15 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             speedUp = false;
+        }
+
+        if (Input.GetKey("enter") || Input.GetKey("return"))
+        {
+            jump = true;
+        }
+        else
+        {
+            jump = false;
         }
         
 
@@ -72,6 +87,15 @@ public class PlayerMovement : MonoBehaviour
         if (speedUp)
         {
             rb.AddForce(0, 0, forwardForce * Time.deltaTime, ForceMode.VelocityChange);
+        }
+
+        if (jump)
+        {
+            if (canJump)
+            {
+                FindObjectOfType<AudioManager>().Play("Jump", 0.5f);
+                rb.AddForce(0, jumpForce * Time.deltaTime, 0, ForceMode.Impulse);
+            }
         }
 
 
