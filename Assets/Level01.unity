@@ -2120,7 +2120,7 @@ GameObject:
   - component: {fileID: 930294726}
   m_Layer: 9
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5727,6 +5727,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 2117486246}
+    - target: {fileID: 3830188313714569214, guid: ac6998b87ec773a48b3242fda382314d,
+        type: 3}
+      propertyPath: jumpForce
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac6998b87ec773a48b3242fda382314d, type: 3}
 --- !u!1001 &6564591266253022115
