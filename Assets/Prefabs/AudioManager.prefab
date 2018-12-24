@@ -68,12 +68,6 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: FallingDown
-    clip: {fileID: 8300000, guid: 3c816b1feab5d6541b8366b6eb9d041d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 993a2bbfd77a9f64aab9d690a85a08aa, type: 3}
     volume: 1
