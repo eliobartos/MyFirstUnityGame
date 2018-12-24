@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public GameManager gameManager;
-    private float timePassed;
+    public float timePassed;
 
     public Text timerText;
 

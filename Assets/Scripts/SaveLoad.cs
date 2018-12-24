@@ -33,7 +33,7 @@ public class SaveLoad : MonoBehaviour
         bf.Serialize(file, currentGame);
         file.Close();
 
-        Debug.Log("Saved data: " + currentGame.cubesCollected.ToString() + " cubesCollected");
+        currentGame.Print();
     }
 
     public static void LoadGame()
@@ -43,12 +43,12 @@ public class SaveLoad : MonoBehaviour
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/saveGameData.gd", FileMode.Open);
-            SaveLoad.currentGame = (GameData)bf.Deserialize(file);
+            currentGame = (GameData)bf.Deserialize(file);
             file.Close();
         } else
         {
             currentGame = new GameData();
         }
-        Debug.Log("Load data: " + currentGame.cubesCollected.ToString() + " cubesCollected");
+        currentGame.Print();
     }
 }

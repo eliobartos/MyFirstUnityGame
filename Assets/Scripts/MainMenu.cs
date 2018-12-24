@@ -30,10 +30,6 @@ public class MainMenu : MonoBehaviour
         }
         else if (buttonTag == "Quit")
         {
-            // Change save game data
-            SaveLoad.currentGame.cubesCollected += 1;
-            // Save game on exit
-            SaveLoad.SaveGame();
             Application.Quit();
         }
         
