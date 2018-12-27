@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void goToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     // give player cubes for completing level in time

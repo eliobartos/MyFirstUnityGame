@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
     // Called when button on Main Menu is clicked
-    public void loadLevel()
+    public void LoadLevel()
     {
         FindObjectOfType<AudioManager>().Play("ButtonClicked");
 
