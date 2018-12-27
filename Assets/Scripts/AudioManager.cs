@@ -9,8 +9,6 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    bool play_fall_sound = true;
-
     // Start is called before the first frame update
     void Awake()
     {

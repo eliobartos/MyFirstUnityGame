@@ -4,10 +4,54 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public int cubesCollected;
+    private readonly int levelNum = 3;
+    public int[] cubesPerLevel;  // number of cubes per level user has
+    public float[] highScorePerLevel;  // fastest time per level
 
     public GameData()
     {
-        cubesCollected = 0;
+        this.cubesPerLevel = new int[levelNum];
+        this.highScorePerLevel = new float[levelNum];
+
+        for (int i = 0; i < levelNum; i++)
+        {
+            this.cubesPerLevel[i] = 0;
+            this.highScorePerLevel[i] = 99f;
+        }
+
+    }
+
+    public void Print()
+    {
+        Debug.Log("Cubes per level -----------------");
+        for(int i = 0; i < levelNum; i++)
+        {
+            Debug.Log("Level " + (i + 1).ToString() + " cubes collected " + this.cubesPerLevel[i]);
+        }
+
+        Debug.Log("High Scores -----------------");
+        for (int i = 0; i < levelNum; i++)
+        {
+            Debug.Log("Level " + (i + 1).ToString() + " fastest time " + this.highScorePerLevel[i]);
+        }
+    }
+
+    // Assing new cubes if user doesn't allready have them
+    public void AssignCubesPerLevel(int index, int value)
+    {
+        if(cubesPerLevel[index] < value)
+        {
+            cubesPerLevel[index] = value;
+        }
+    }
+
+    public void AssignHighScorePerLevel(int index, float time)
+    {
+        Debug.Log("Inside assign");
+        if(highScorePerLevel[index] > time)
+        {
+            Debug.Log("Inside if assign");
+            highScorePerLevel[index] = time;
+        }
     }
 }
