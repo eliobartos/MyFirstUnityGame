@@ -47,10 +47,8 @@ public class GameData
 
     public void AssignHighScorePerLevel(int index, float time)
     {
-        Debug.Log("Inside assign");
         if(highScorePerLevel[index] > time)
         {
-            Debug.Log("Inside if assign");
             highScorePerLevel[index] = time;
         }
     }

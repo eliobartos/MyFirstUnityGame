@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             //Invoke("RestartGame", restartDelay);
+            EndGameUIStars();
             endGameUI.SetActive(true);
         }
         
@@ -113,6 +114,59 @@ public class GameManager : MonoBehaviour
             case "Level03":
                 SaveLoad.currentGame.AssignHighScorePerLevel(2, timePassed);
                 break;
+        }
+    }
+
+
+    public void EndGameUIStars()
+    {
+        int levelIndex = 0;
+        string levelName = SceneManager.GetActiveScene().name;
+        GameObject starContainer = null;
+        int stars;
+
+        switch(levelName)
+        {
+            case "Level01":
+                levelIndex = 0;
+                break;
+            case "Level02":
+                levelIndex = 1;
+                break;
+            case "Level03":
+                levelIndex = 2;
+                break;
+        }
+        
+        foreach(Transform e in endGameUI.transform)
+        {
+            Debug.Log(e.name);
+            if (e.name != "StarContainer")
+                continue;
+
+            starContainer = e.gameObject;
+        }
+
+        stars = SaveLoad.currentGame.cubesPerLevel[levelIndex];
+        EnableStarsOnStarContainer(starContainer, levelIndex, stars);
+        
+    }
+
+    public void EnableStarsOnStarContainer(GameObject starContainer, int levelIndex, int stars)
+    {
+        int i = 1;
+        foreach (Transform star in starContainer.transform)
+        {
+            foreach (Transform image in star.transform)
+            {
+                if (SaveLoad.currentGame.cubesPerLevel[levelIndex] >= i)
+                {
+                    image.gameObject.SetActive(true);
+                }
+
+            }
+            ++i;
+
         }
     }
 }

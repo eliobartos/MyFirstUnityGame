@@ -24,6 +24,7 @@ public class SaveLoad : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
     }
 
     public static void SaveGame()
@@ -45,10 +46,13 @@ public class SaveLoad : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/saveGameData.gd", FileMode.Open);
             currentGame = (GameData)bf.Deserialize(file);
             file.Close();
+
         } else
         {
             currentGame = new GameData();
         }
         currentGame.Print();
     }
+
+    
 }
