@@ -37,12 +37,16 @@ public class GameData
     }
 
     // Assing new cubes if user doesn't allready have them
-    public void AssignCubesPerLevel(int index, int value)
+    public int AssignCubesPerLevel(int index, int value)
     {
+        int newCubes = 0;
         if(cubesPerLevel[index] < value)
         {
+            newCubes = value - cubesPerLevel[index];
             cubesPerLevel[index] = value;
+
         }
+        return newCubes;
     }
 
     public void AssignHighScorePerLevel(int index, float time)
