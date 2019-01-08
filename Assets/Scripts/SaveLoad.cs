@@ -54,5 +54,16 @@ public class SaveLoad : MonoBehaviour
         currentGame.Print();
     }
 
+    public static int GetTotalStars()
+    {
+        int totalStars = 0;
+
+        for(int i = 0; i < currentGame.cubesPerLevel.Length; i++)
+        {
+            totalStars += currentGame.cubesPerLevel[i];
+        }
+
+        return (totalStars);
+    }
     
 }
