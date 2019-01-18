@@ -51,6 +51,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("LevelSelect");
     }
 
+    public void goToWelcomeScene()
+    {
+        SceneManager.LoadScene("WelcomeScene");
+    }
+
     // give player cubes for completing level in time
     public int GiveCubes(float timePassed, string levelName)
     {
