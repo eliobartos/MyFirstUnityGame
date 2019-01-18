@@ -34,4 +34,13 @@ public class MainMenu : MonoBehaviour
         }
         
     }
+
+    // Called when button on Controls is clicked
+
+    public void GoBack()
+    {
+        FindObjectOfType<AudioManager>().Play("ButtonClicked");
+
+        FindObjectOfType<GameManager>().goToMainMenu();
+    }
 }

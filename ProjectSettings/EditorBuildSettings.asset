@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WelcomeScene.unity
     guid: 31a01c7e86062ab47819e21ca59d80e7
-  - enabled: 1
-    path: Assets/MainMenu.unity
-    guid: 4a92e63d153669c4991d77f9bbd4fe73
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Level01.unity
     guid: eedbd32f210e6d746a36631cfa96047a
@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Level03.unity
     guid: 1b6c47c9e14665b4098863a715711b66
   - enabled: 1
-    path: Assets/LevelSelect.unity
+    path: Assets/Controls.unity
     guid: 018ed0ca49c4f7344bbb2ca03cc197db
+  - enabled: 1
+    path: Assets/LevelSelect.unity
+    guid: 7171d14f952816f409840ad6e7ac0209
   m_configObjects: {}
