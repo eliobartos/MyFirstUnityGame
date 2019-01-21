@@ -11,6 +11,8 @@ TagManager:
   - Controls
   - Quit
   - Ground
+  - Lvl4
+  - AllStars
   layers:
   - Default
   - TransparentFX

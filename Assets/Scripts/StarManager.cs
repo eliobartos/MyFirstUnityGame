@@ -5,6 +5,7 @@ public class StarManager : MonoBehaviour
 {
 
     public GameObject[] levelButtons;
+    public GameObject allStarsButton;
 
     public void Start()
     {
@@ -16,15 +17,22 @@ public class StarManager : MonoBehaviour
     {
         int totalStars = SaveLoad.GetTotalStars();
         
+        // Enable all stars button
+        if(totalStars >= levelButtons.Length * 3)
+        {
+            allStarsButton.SetActive(true);
+        }
         for (int i = 0; i < levelButtons.Length; ++i)
         {
-
+            Debug.Log("Here");
+            Debug.Log(i);
             int currentLevel = int.Parse(levelButtons[i].transform.GetChild(0).transform.GetComponent<Text>().text);
             int currentLevelRequirement = LevelUnlockRequirement(currentLevel);
 
             // If level is unlocked
             if(totalStars >= currentLevelRequirement)
             {
+                Debug.Log("Otkljucan");
                 // Set button as interactable
                 levelButtons[i].GetComponent<Button>().interactable = true;
 
@@ -32,6 +40,7 @@ public class StarManager : MonoBehaviour
                 EnableStarsOnLevel(i, SaveLoad.currentGame.cubesPerLevel[i]);
             } else
             {
+                Debug.Log("Zakljucan");
                 EnableStarsRequirement(i);
             }
 
@@ -81,7 +90,7 @@ public class StarManager : MonoBehaviour
             element.gameObject.SetActive(true);
             // Set stars requirement
             element.GetComponentInChildren<Text>().text = LevelUnlockRequirement(levelIndex + 1).ToString();
-
+            Debug.Log(element.GetComponentInChildren<Text>().text);
         }
     }
 
@@ -94,6 +103,8 @@ public class StarManager : MonoBehaviour
                 return (1);
             case 3:
                 return (3);
+            case 4:
+                return (7);
         }
         return (0);
     }

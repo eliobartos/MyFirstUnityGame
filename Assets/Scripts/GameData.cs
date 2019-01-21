@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    private readonly int levelNum = 3;
+    private readonly int levelNum = 4;
     public int[] cubesPerLevel;  // number of cubes per level user has
     public float[] highScorePerLevel;  // fastest time per level
 

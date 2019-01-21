@@ -24,6 +24,10 @@ public class MainMenu : MonoBehaviour
         {
             SceneManager.LoadScene("Level03");
         }
+        else if (buttonTag == "Lvl4")
+        {
+            SceneManager.LoadScene("Level04");
+        }
         else if (buttonTag == "Controls")
         {
             SceneManager.LoadScene("Controls");
@@ -31,6 +35,10 @@ public class MainMenu : MonoBehaviour
         else if (buttonTag == "Quit")
         {
             Application.Quit();
+        }
+        else if (buttonTag == "AllStars")
+        {
+            SceneManager.LoadScene("AllStarsSCreen");
         }
         
     }

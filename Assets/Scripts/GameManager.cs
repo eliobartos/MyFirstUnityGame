@@ -93,17 +93,31 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "Level03":
-                if (timePassed <= 13.9f)
+                if (timePassed <= 21.3f)
                 {
                     newCubes = SaveLoad.currentGame.AssignCubesPerLevel(2, 3);
                 }
-                else if (timePassed <= 15.5f)
+                else if (timePassed <= 23.5f)
                 {
                     newCubes = SaveLoad.currentGame.AssignCubesPerLevel(2, 2);
                 }
-                else if (timePassed <= 18f)
+                else if (timePassed <= 26.0f)
                 {
                     newCubes = SaveLoad.currentGame.AssignCubesPerLevel(2, 1);
+                }
+                break;
+            case "Level04":
+                if (timePassed <= 28.5f)
+                {
+                    newCubes = SaveLoad.currentGame.AssignCubesPerLevel(3, 3);
+                }
+                else if (timePassed <= 32.0f)
+                {
+                    newCubes = SaveLoad.currentGame.AssignCubesPerLevel(3, 2);
+                }
+                else if (timePassed <= 35.0f)
+                {
+                    newCubes = SaveLoad.currentGame.AssignCubesPerLevel(3, 1);
                 }
                 break;
         }
@@ -146,6 +160,9 @@ public class GameManager : MonoBehaviour
                 break;
             case "Level03":
                 levelIndex = 2;
+                break;
+            case "Level04":
+                levelIndex = 3;
                 break;
         }
         

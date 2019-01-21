@@ -36,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
                 forwardForce = 35f;
                 break;
             case "Level04":
+                forwardForce = 35f;
+                break;
+            case "Level10":
                 jumpAllowed = true;
                 gravityForce = -50;
                 break;
